@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page with Zoom</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .color-box {
-            width: 100px;
-            height: 40px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        .size-btn {
-            min-width: 50px;
-            text-align: center;
-        }
-
-        .zoom-img {
-            width: 100%;
-            border: 1px solid #ccc;
-        }
-    </style>
-</head>
-
-<body class="p-4">
-
-    <div class="container">
+@extends('fontend-layouts.app')
+@section('content')
+    <div class="container" style="margin-top: 100px !important; margin-bottom: 50px !important;">
         <div class="row g-4">
-
             <!-- Product Image with Zoom -->
             <div class="col-md-5 text-center">
                 <img id="productImage" src="fontend/images/Black-1-600x600.png" data-zoom-image="fontend/images/Black-1-600x600.png" alt="Product" class="zoom-img img-fluid">
@@ -65,7 +36,6 @@
                 <button class="btn btn-outline-primary w-100 mb-3">BUY NOW</button>
             </div>
 
-
         </div>
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -80,24 +50,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery & ElevateZoom -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("#productImage").elevateZoom({
-                zoomType: "lens",
-                lensShape: "round",
-                lensSize: 200
-            });
-        });
-    </script>
-
-</body>
-
-</html>
+@endsection

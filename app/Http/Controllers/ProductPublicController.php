@@ -12,4 +12,9 @@ class ProductPublicController extends Controller
         $products = Product::with('images')->get();
         return view('products.index', compact('products'));
     }
+
+    public function productsDetails()
+    {
+       return view('frontend-pages.productsdetails');
+    }
 }

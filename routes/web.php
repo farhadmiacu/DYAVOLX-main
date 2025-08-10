@@ -49,6 +49,9 @@ Route::get('/', function () {
 // Public: Products List
 Route::get('/products', [ProductPublicController::class, 'index'])->name('products.index');
 
+// Public: Product Details
+Route::get('/products-details', [ProductPublicController::class, 'productsDetails'])->name('products.details');
+
 // Cart Routes (still require login)
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
